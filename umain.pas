@@ -29,7 +29,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ListBox1DblClick(Sender: TObject);
-    procedure ListBox1DrawItem(Control: TWinControl; Index: Integer;
+    procedure ListBox1DrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
   private
     backgroundImage: TBGRABitmap;
@@ -37,8 +37,8 @@ type
 
   end;
 
-  resourcestring
-    SEARCH = 'SEARCH';
+resourcestring
+  SEARCH = 'SEARCH';
 
 var
   Form1: TForm1;
@@ -78,23 +78,31 @@ begin
 
 end;
 
-procedure TForm1.ListBox1DrawItem(Control: TWinControl; Index: Integer;
+procedure TForm1.ListBox1DrawItem(Control: TWinControl; Index: integer;
   ARect: TRect; State: TOwnerDrawState);
 var
   bmp: TBGRABitmap;
+  textRect: TRect;
 begin
   if odSelected in State then
     bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, ACCENT_COLOR)
   else
     bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, BACKGROUND_COLOR);
-  bmp.DrawHorizLine(0, bmp.Height-1, bmp.Width, BORDER_COLOR);
+  bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
+  textRect := ARect;
+  textRect.Left := 64;
   bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
   bmp.Free;
+  TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
+  TListBox(Control).Canvas.TextRect(textRect, textRect.Left, textRect.Top +
+    (64 - TListBox(Control).Canvas.GetTextHeight(TListBox(Control).Items[Index])) div 2,
+    TListBox(Control).Items[Index]);
 end;
 
 procedure TForm1.BGRAVirtualScreen1Redraw(Sender: TObject; Bitmap: TBGRABitmap);
 begin
-  Bitmap.StretchPutImageProportionally(Rect(0, 0, Bitmap.Width, Bitmap.Height), taCenter, tlCenter, backgroundImage, dmSet, 255, True);
+  Bitmap.StretchPutImageProportionally(Rect(0, 0, Bitmap.Width, Bitmap.Height),
+    taCenter, tlCenter, backgroundImage, dmSet, 255, True);
 end;
 
 procedure TForm1.BCMaterialEdit1Change(Sender: TObject);
