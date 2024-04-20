@@ -36,8 +36,7 @@ implementation
 constructor TProgram.Create(aName: string; aPath: string);
 begin
   Name := aName;
-  path := ExtractFilePath(ParamStr(0)) + 'emu' + PathDelim + aPath;
-  debugln(path);
+  path := aPath;
 end;
 
 procedure TProgram.Run(aFile: string);
@@ -51,12 +50,20 @@ begin
 end;
 
 procedure AddProgram(aName: string; aPath: string);
+var
+  p: String;
 begin
-  programs.Add(TProgram.Create(aName, aPath));
+  p := ExtractFilePath(ParamStr(0)) + 'emu' + PathDelim + aPath;
+  if FileExists(p) then
+  begin
+    debugln(p);
+    programs.Add(TProgram.Create(aName, p));
+  end;
 end;
 
 initialization
   programs := TProgramList.Create(True);
+  AddProgram('CITRA', 'citra\citra-qt.exe');
   AddProgram('DESMUME', 'desmume\desmume.exe');
   AddProgram('MYZOOM', 'no$gba\myzoom.exe');
   AddProgram('NGZOOM', 'no$gba\ngzoom.exe');

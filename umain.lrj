@@ -1,3 +1,5 @@
 {"version":1,"strings":[
-{"hash":43322223,"name":"tfrmmain.caption","sourcebytes":[87,105,110,68,83,32,80,82,79],"value":"WinDS PRO"}
+{"hash":43322223,"name":"tfrmmain.caption","sourcebytes":[87,105,110,68,83,32,80,82,79],"value":"WinDS PRO"},
+{"hash":353982,"name":"tfrmmain.bcbopen.caption","sourcebytes":[79,112,101,110],"value":"Open"},
+{"hash":88,"name":"tfrmmain.bcbclose.caption","sourcebytes":[88],"value":"X"}
 ]}

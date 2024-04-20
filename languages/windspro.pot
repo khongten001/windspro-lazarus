@@ -1,6 +1,15 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: tfrmmain.bcbclose.caption
+msgctxt "tfrmmain.bcbclose.caption"
+msgid "X"
+msgstr ""
+
+#: tfrmmain.bcbopen.caption
+msgid "Open"
+msgstr ""
+
 #: tfrmmain.caption
 msgctxt "tfrmmain.caption"
 msgid "WinDS PRO"

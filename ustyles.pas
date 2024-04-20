@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, BGRABitmap, BGRABitmapTypes, BCPanel,
-  BCTypes, BCMaterialEdit, Dialogs, StdCtrls,
+  BCTypes, BCMaterialEdit, Dialogs, StdCtrls, BCButton,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -17,6 +17,7 @@ const
   ACCENT_COLOR: TBGRAPixel = (blue: 214; green: 102; red: 3; alpha: 255);
   BACKGROUND_COLOR: TBGRAPixel = (blue: 46; green: 41; red: 36; alpha: 255);
   BACKGROUND_DARK_COLOR: TBGRAPixel = (blue: 37; green: 33; red: 29; alpha: 255);
+  BACKGROUND_LIGHT_COLOR: TBGRAPixel = (blue: 61; green: 54; red: 47; alpha: 255);
   BORDER_COLOR: TBGRAPixel = (blue: 20; green: 20; red: 20; alpha: 255);
   TEXT_COLOR: TBGRAPixel = (blue: 250; green: 248; red: 246; alpha: 255);
 
@@ -39,6 +40,7 @@ begin
           Border.Color := BORDER_COLOR;
           Border.Style := bboSolid;
           BorderBCStyle := bpsBorder;
+          FontEx.Color := TEXT_COLOR;
         end;
       end;
       'TBCMaterialEdit': begin
@@ -46,7 +48,7 @@ begin
         begin
           AccentColor := ACCENT_COLOR;
           Color := BACKGROUND_DARK_COLOR;
-          DisabledColor := BORDER_COLOR;
+          DisabledColor := TEXT_COLOR;
           Edit.Color := BACKGROUND_DARK_COLOR;
           Edit.Font.Color := TEXT_COLOR;
         end;
@@ -56,6 +58,23 @@ begin
         begin
           BorderStyle := bsNone;
           Color := BACKGROUND_COLOR;
+        end;
+      end;
+      'TBCButton': begin
+        with aControl.Controls[i] as TBCButton do
+        begin
+          Rounding.RoundX := 0;
+          Rounding.RoundY := 0;
+          StateNormal.FontEx.Shadow := False;
+          StateNormal.Border.Style := bboSolid;
+          StateNormal.Border.Color := BORDER_COLOR;
+          StateNormal.Background.Style := bbsColor;
+          StateNormal.Background.Color := BACKGROUND_DARK_COLOR;
+          StateNormal.FontEx.Color := TEXT_COLOR;
+          StateHover.Assign(StateNormal);
+          StateHover.Background.Color := BACKGROUND_LIGHT_COLOR;
+          StateClicked.Assign(StateNormal);
+          StateClicked.Background.Color := BACKGROUND_COLOR;
         end;
       end;
     end;

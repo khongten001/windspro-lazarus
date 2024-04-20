@@ -7,7 +7,8 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
   ustyles, BCPanel, BCMaterialEdit, BGRAVirtualScreen, BGRABitmap, BCTypes,
-  BCListBox, BGRABitmapTypes, LCLType, Generics.Collections, uprograms,
+  BCListBox, BCButton, BGRABitmapTypes, LCLType, Generics.Collections,
+  uprograms,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -19,11 +20,17 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    bcbOpen: TBCButton;
+    bcbClose: TBCButton;
     bcmeSearch: TBCMaterialEdit;
+    bcpFile: TBCPanel;
     bcpTop: TBCPanel;
     bcpLeft: TBCPanel;
+    odOpen: TOpenDialog;
     vsBackgroundImage: TBGRAVirtualScreen;
     lbPrograms: TListBox;
+    procedure bcbCloseClick(Sender: TObject);
+    procedure bcbOpenClick(Sender: TObject);
     procedure bcmeSearchChange(Sender: TObject);
     procedure vsBackgroundImageRedraw(Sender: TObject; Bitmap: TBGRABitmap);
     procedure FormCreate(Sender: TObject);
@@ -60,6 +67,11 @@ begin
   backgroundImage := TBGRABitmap.Create;
   backgroundImage.LoadFromResource('BACKGROUND');
   SearchAndFill('');
+  if ParamCount > 0 then
+  begin
+    bcpFile.Caption := ParamStr(1);
+    bcpFile.Visible := True;
+  end;
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
@@ -69,7 +81,7 @@ end;
 
 procedure TfrmMain.lbProgramsDblClick(Sender: TObject);
 begin
-  TProgram(lbPrograms.Items.Objects[lbPrograms.ItemIndex]).Run('');
+  TProgram(lbPrograms.Items.Objects[lbPrograms.ItemIndex]).Run(bcpFile.Caption);
 end;
 
 procedure TfrmMain.lbProgramsDrawItem(Control: TWinControl; Index: integer;
@@ -157,6 +169,23 @@ end;
 procedure TfrmMain.bcmeSearchChange(Sender: TObject);
 begin
   debugln(bcmeSearch.Edit.Text);
+  SearchAndFill(bcmeSearch.Edit.Text);
+end;
+
+procedure TfrmMain.bcbOpenClick(Sender: TObject);
+begin
+  if (odOpen.Execute) then
+  begin
+    bcpFile.Caption := odOpen.FileName;
+    bcpFile.Visible := True;
+    SearchAndFill(bcmeSearch.Edit.Text);
+  end;
+end;
+
+procedure TfrmMain.bcbCloseClick(Sender: TObject);
+begin
+  bcpFile.Caption := '';
+  bcpFile.Visible := False;
   SearchAndFill(bcmeSearch.Edit.Text);
 end;
 
