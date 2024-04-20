@@ -127,23 +127,33 @@ var
   bmp: TBGRABitmap;
   textRect: TRect;
 begin
-  if odSelected in State then
-    bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, ACCENT_COLOR)
-  else
-    bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, BACKGROUND_COLOR);
-  bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
-  textRect := ARect;
-  textRect.Left := TListBox(Control).ItemHeight;
-  bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2,
-    (TListBox(Control).ItemHeight - 32) div 2,
-    TProgram(TListBox(Control).Items.Objects[Index]).icon, dmDrawWithTransparency);
-  bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
-  bmp.Free;
-  TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
-  TListBox(Control).Canvas.TextRect(textRect, textRect.Left, textRect.Top +
-    (TListBox(Control).ItemHeight - TListBox(Control).Canvas.GetTextHeight(
-    TListBox(Control).Items[Index])) div 2,
-    TListBox(Control).Items[Index]);
+  try
+    if odSelected in State then
+      bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, ACCENT_COLOR)
+    else
+      bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, BACKGROUND_COLOR);
+    try
+    bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
+    textRect := ARect;
+    textRect.Left := TListBox(Control).ItemHeight;
+    bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2,
+      (TListBox(Control).ItemHeight - 32) div 2,
+      TProgram(TListBox(Control).Items.Objects[Index]).icon, dmDrawWithTransparency);
+    bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
+    TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
+    TListBox(Control).Canvas.TextRect(textRect, textRect.Left, textRect.Top +
+      (TListBox(Control).ItemHeight - TListBox(Control).Canvas.GetTextHeight(
+      TListBox(Control).Items[Index])) div 2,
+      TListBox(Control).Items[Index]);
+    finally
+      bmp.Free;
+    end;
+  except
+    on e: Exception do
+    begin
+
+    end;
+  end;
 end;
 
 procedure TfrmMain.FillFiles();
