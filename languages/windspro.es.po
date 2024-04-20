@@ -11,6 +11,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
+#: tfrmmain.bcbbackground.caption
+msgid "Background"
+msgstr ""
+
 #: tfrmmain.bcbclose.caption
 msgctxt "tfrmmain.bcbclose.caption"
 msgid "X"

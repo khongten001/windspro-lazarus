@@ -22,6 +22,7 @@ type
   TfrmMain = class(TForm)
     bcbOpen: TBCButton;
     bcbClose: TBCButton;
+    bcbBackground: TBCButton;
     bcmeSearch: TBCMaterialEdit;
     bcmeSearchFiles: TBCMaterialEdit;
     bcpFiles: TBCPanel;
@@ -34,6 +35,7 @@ type
     sdOpen: TSelectDirectoryDialog;
     vsBackgroundImage: TBGRAVirtualScreen;
     lbPrograms: TListBox;
+    procedure bcbBackgroundClick(Sender: TObject);
     procedure bcbCloseClick(Sender: TObject);
     procedure bcbOpenClick(Sender: TObject);
     procedure bcmeSearchChange(Sender: TObject);
@@ -43,6 +45,10 @@ type
     procedure JSONPropStorage1StoredValues0Restore(Sender: TStoredValue;
       var Value: TStoredType);
     procedure JSONPropStorage1StoredValues0Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues1Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues1Save(Sender: TStoredValue;
       var Value: TStoredType);
     procedure lbFilesDrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
@@ -54,6 +60,7 @@ type
     procedure lbProgramsDrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
   private
+    backgroundImageFileName: string;
     backgroundImage: TBGRABitmap;
     files: TStringList;
     procedure FillFiles();
@@ -88,6 +95,7 @@ begin
   bcmeSearchFiles.Align := alTop;
   bcmeSearchFiles.Title.Caption := SEARCH;
   bcmeSearchFiles.Edit.OnKeyDown := @SearchFilesKeyDown;
+  backgroundImageFileName := '';
   backgroundImage := TBGRABitmap.Create;
   backgroundImage.LoadFromResource('BACKGROUND');
   ForceDirectories(GetAppConfigDir(False));
@@ -291,6 +299,23 @@ begin
   Value := bcpFiles.Caption;
 end;
 
+procedure TfrmMain.JSONPropStorage1StoredValues1Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  backgroundImageFileName := Value;
+  if FileExists(backgroundImageFileName) then
+  begin
+    backgroundImage.LoadFromFile(backgroundImageFileName);
+    vsBackgroundImage.DiscardBitmap;
+  end;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues1Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := backgroundImageFileName;
+end;
+
 procedure TfrmMain.lbFilesDrawItem(Control: TWinControl; Index: integer;
   ARect: TRect; State: TOwnerDrawState);
 var
@@ -334,6 +359,16 @@ begin
   bcpFile.Caption := '';
   bcpFile.Visible := False;
   SearchAndFill(bcmeSearch.Edit.Text);
+end;
+
+procedure TfrmMain.bcbBackgroundClick(Sender: TObject);
+begin
+  if (odOpen.Execute) then
+  begin
+    backgroundImageFileName := odOpen.FileName;
+    backgroundImage.LoadFromFile(backgroundImageFileName);
+    vsBackgroundImage.DiscardBitmap;
+  end;
 end;
 
 end.
