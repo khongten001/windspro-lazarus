@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
   ustyles, BCPanel, BCMaterialEdit, BGRAVirtualScreen, BGRABitmap, BCTypes,
-  BCListBox, BGRABitmapTypes, LCLType,
+  BCListBox, BGRABitmapTypes, LCLType, Generics.Collections, uprograms,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -33,7 +33,6 @@ type
       ARect: TRect; State: TOwnerDrawState);
   private
     backgroundImage: TBGRABitmap;
-    programs: TStringList;
     procedure SearchAndFill(aSearch: string);
   public
 
@@ -53,34 +52,22 @@ implementation
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  programs := TStringList.Create;
   styleForm(Self);
   bcmeSearch.Align := alTop;
   bcmeSearch.Title.Caption := SEARCH;
   backgroundImage := TBGRABitmap.Create;
   backgroundImage.LoadFromResource('BACKGROUND');
-  programs.Add('NO$GBA');
-  programs.Add('DESMUME');
-  programs.Add('VBA-LINK');
-  programs.Add('VBA-M');
-  programs.Add('SUYU');
-  programs.Add('LIME 3DS');
-  programs.Add('DOLPHIN');
-  programs.Add('PROJECT64');
-  programs.Add('CEMU');
-  programs.Add('MELON DS');
   SearchAndFill('');
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   backgroundImage.Free;
-  programs.Free;
 end;
 
 procedure TfrmMain.lbProgramsDblClick(Sender: TObject);
 begin
-
+  TProgram(lbPrograms.Items.Objects[lbPrograms.ItemIndex]).Run('');
 end;
 
 procedure TfrmMain.lbProgramsDrawItem(Control: TWinControl; Index: integer;
@@ -119,14 +106,14 @@ begin
     contains := True;
     for i := 0 to Length(arr) - 1 do
     begin
-      if programs[j].Contains(arr[i]) then
+      if programs[j].Name.Contains(arr[i]) then
         continue
       else
         contains := False;
     end;
     if (contains) then
     begin
-      lbPrograms.AddItem(programs[j], nil);
+      lbPrograms.AddItem(programs[j].Name, programs[j]);
     end;
   end;
 end;
