@@ -5,7 +5,7 @@ unit uprograms;
 interface
 
 uses
-  Classes, SysUtils, Generics.Collections, Process, Forms,
+  Classes, SysUtils, Generics.Collections, Process, Forms, BGRABitmap, BGRABitmapTypes,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -20,7 +20,12 @@ type
   public
     Name: string;
     path: string;
-    constructor Create(aName: string; aPath: string);
+    icon: TBGRABitmap;
+    extensions: string;
+    category: string;
+    constructor Create(aName: string; aPath: string; aIcon: string;
+      aExtensions: string; aCategory: string);
+    destructor Destroy; override;
     procedure Run(aFile: string);
   end;
 
@@ -33,10 +38,23 @@ implementation
 
 { TProgram }
 
-constructor TProgram.Create(aName: string; aPath: string);
+constructor TProgram.Create(aName: string; aPath: string; aIcon: string;
+  aExtensions: string; aCategory: string);
 begin
   Name := aName;
   path := aPath;
+  if FileExists(aIcon) then
+    icon := TBGRABitmap.Create(aIcon)
+  else
+    icon := TBGRABitmap.Create(32, 32, BGRAPixelTransparent);
+  extensions := aExtensions;
+  category := aCategory;
+end;
+
+destructor TProgram.Destroy;
+begin
+  icon.Free;
+  inherited Destroy;
 end;
 
 procedure TProgram.Run(aFile: string);
@@ -49,26 +67,28 @@ begin
   Application.Restore;
 end;
 
-procedure AddProgram(aName: string; aPath: string);
+procedure AddProgram(aName: string; aPath: string; aIcon: string);
 var
-  p: String;
+  p, i: string;
 begin
   p := ExtractFilePath(ParamStr(0)) + 'emu' + PathDelim + aPath;
+  i := ExtractFilePath(ParamStr(0)) + 'resources\app\icons\' + aIcon;
   if FileExists(p) then
   begin
     debugln(p);
-    programs.Add(TProgram.Create(aName, p));
+    programs.Add(TProgram.Create(aName, p, i, '', ''));
   end;
 end;
 
 initialization
   programs := TProgramList.Create(True);
-  AddProgram('CITRA', 'citra\citra-qt.exe');
-  AddProgram('DESMUME', 'desmume\desmume.exe');
-  AddProgram('MYZOOM', 'no$gba\myzoom.exe');
-  AddProgram('NGZOOM', 'no$gba\ngzoom.exe');
-  AddProgram('NO$GBA 2.6A', 'no$gba\no$gba.exe');
-  AddProgram('NO$GBA2X', 'no$gba\no$gba2x.exe');
+  AddProgram('CITRA', 'citra\citra-qt.exe', 'citra.png');
+  AddProgram('DESMUME', 'desmume\desmume.exe', 'desmume.png');
+  AddProgram('MYZOOM', 'no$gba\myzoom.exe', 'nocashgba.png');
+  AddProgram('NGZOOM', 'no$gba\ngzoom.exe', 'nocashgba.png');
+  AddProgram('NO$GBA 2.6A', 'no$gba\no$gba.exe', 'nocashgba.png');
+  AddProgram('NO$GBA2X', 'no$gba\no$gba2x.exe', 'nocashgba.png');
+  AddProgram('RYUJINX', 'ryujinx\ryujinx.exe', 'ryujinx.png');
 
 finalization
   programs.Free;

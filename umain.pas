@@ -96,7 +96,8 @@ begin
     bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, BACKGROUND_COLOR);
   bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
   textRect := ARect;
-  textRect.Left := 64;
+  textRect.Left := TListBox(Control).ItemHeight;
+  bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2, (TListBox(Control).ItemHeight - 32) div 2, TProgram(TListBox(Control).Items.Objects[Index]).icon, dmDrawWithTransparency);
   bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
   bmp.Free;
   TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
