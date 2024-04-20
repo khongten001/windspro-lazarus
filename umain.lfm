@@ -1,11 +1,11 @@
-object Form1: TForm1
+object frmMain: TfrmMain
   Left = 352
-  Height = 480
+  Height = 672
   Top = 32
-  Width = 640
+  Width = 896
   Caption = 'WinDS PRO'
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 672
+  ClientWidth = 896
   Constraints.MinHeight = 480
   Constraints.MinWidth = 640
   DesignTimePPI = 120
@@ -14,11 +14,11 @@ object Form1: TForm1
   Position = poScreenCenter
   LCLVersion = '3.2.0.0'
   WindowState = wsMaximized
-  object BCPanel1: TBCPanel
+  object bcpTop: TBCPanel
     Left = 0
     Height = 64
     Top = 0
-    Width = 640
+    Width = 896
     Align = alTop
     Background.Color = clBtnFace
     Background.Gradient1.StartColor = clWhite
@@ -53,9 +53,9 @@ object Form1: TForm1
     Rounding.RoundY = 1
     TabOrder = 0
   end
-  object BCPanel2: TBCPanel
+  object bvpLeft: TBCPanel
     Left = 0
-    Height = 416
+    Height = 608
     Top = 64
     Width = 500
     Align = alLeft
@@ -91,7 +91,7 @@ object Form1: TForm1
     Rounding.RoundX = 1
     Rounding.RoundY = 1
     TabOrder = 1
-    object BCMaterialEdit1: TBCMaterialEdit
+    object bcmeSearch: TBCMaterialEdit
       Left = 0
       Height = 63
       Top = 0
@@ -99,28 +99,29 @@ object Form1: TForm1
       Color = clWhite
       DisabledColor = 12103592
       AccentColor = clHighlight
-      OnChange = BCMaterialEdit1Change
+      OnChange = bcmeSearchChange
     end
-    object ListBox1: TListBox
+    object lbPrograms: TListBox
       Left = 1
-      Height = 414
+      Height = 606
       Top = 1
       Width = 498
       Align = alClient
       ItemHeight = 64
       Options = []
+      Sorted = True
       Style = lbOwnerDrawFixed
       TabOrder = 1
-      OnDblClick = ListBox1DblClick
-      OnDrawItem = ListBox1DrawItem
+      OnDblClick = lbProgramsDblClick
+      OnDrawItem = lbProgramsDrawItem
     end
   end
-  object BGRAVirtualScreen1: TBGRAVirtualScreen
+  object vsBackgroundImage: TBGRAVirtualScreen
     Left = 500
-    Height = 416
+    Height = 608
     Top = 64
-    Width = 140
-    OnRedraw = BGRAVirtualScreen1Redraw
+    Width = 396
+    OnRedraw = vsBackgroundImageRedraw
     Align = alClient
     Alignment = taLeftJustify
     Color = clWhite

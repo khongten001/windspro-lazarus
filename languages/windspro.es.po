@@ -11,10 +11,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: tform1.caption
+#: tfrmmain.caption
+#, fuzzy
+msgctxt "tfrmmain.caption"
 msgid "WinDS PRO"
 msgstr "WinDS PRO"
 
 #: umain.search
 msgid "SEARCH"
 msgstr "BUSCAR"
+

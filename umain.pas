@@ -16,23 +16,25 @@ uses
 
 type
 
-  { TForm1 }
+  { TfrmMain }
 
-  TForm1 = class(TForm)
-    BCMaterialEdit1: TBCMaterialEdit;
-    BCPanel1: TBCPanel;
-    BCPanel2: TBCPanel;
-    BGRAVirtualScreen1: TBGRAVirtualScreen;
-    ListBox1: TListBox;
-    procedure BCMaterialEdit1Change(Sender: TObject);
-    procedure BGRAVirtualScreen1Redraw(Sender: TObject; Bitmap: TBGRABitmap);
+  TfrmMain = class(TForm)
+    bcmeSearch: TBCMaterialEdit;
+    bcpTop: TBCPanel;
+    bvpLeft: TBCPanel;
+    vsBackgroundImage: TBGRAVirtualScreen;
+    lbPrograms: TListBox;
+    procedure bcmeSearchChange(Sender: TObject);
+    procedure vsBackgroundImageRedraw(Sender: TObject; Bitmap: TBGRABitmap);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure ListBox1DblClick(Sender: TObject);
-    procedure ListBox1DrawItem(Control: TWinControl; Index: integer;
+    procedure lbProgramsDblClick(Sender: TObject);
+    procedure lbProgramsDrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
   private
     backgroundImage: TBGRABitmap;
+    programs: TStringList;
+    procedure SearchAndFill(aSearch: string);
   public
 
   end;
@@ -41,44 +43,47 @@ resourcestring
   SEARCH = 'SEARCH';
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TfrmMain }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  programs := TStringList.Create;
   styleForm(Self);
-  BCMaterialEdit1.Align := alTop;
-  BCMaterialEdit1.Title.Caption := SEARCH;
+  bcmeSearch.Align := alTop;
+  bcmeSearch.Title.Caption := SEARCH;
   backgroundImage := TBGRABitmap.Create;
   backgroundImage.LoadFromResource('BACKGROUND');
-  ListBox1.AddItem('Hello World 1', nil);
-  ListBox1.AddItem('Hello World 2', nil);
-  ListBox1.AddItem('Hello World 3', nil);
-  ListBox1.AddItem('Hello World 4', nil);
-  ListBox1.AddItem('Hello World 5', nil);
-  ListBox1.AddItem('Hello World 6', nil);
-  ListBox1.AddItem('Hello World 7', nil);
-  ListBox1.AddItem('Hello World 8', nil);
-  ListBox1.AddItem('Hello World 9', nil);
-  ListBox1.AddItem('Hello World 10', nil);
+  programs.Add('NO$GBA');
+  programs.Add('DESMUME');
+  programs.Add('VBA-LINK');
+  programs.Add('VBA-M');
+  programs.Add('SUYU');
+  programs.Add('LIME 3DS');
+  programs.Add('DOLPHIN');
+  programs.Add('PROJECT64');
+  programs.Add('CEMU');
+  programs.Add('MELON DS');
+  SearchAndFill('');
 end;
 
-procedure TForm1.FormDestroy(Sender: TObject);
+procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   backgroundImage.Free;
+  programs.Free;
 end;
 
-procedure TForm1.ListBox1DblClick(Sender: TObject);
+procedure TfrmMain.lbProgramsDblClick(Sender: TObject);
 begin
 
 end;
 
-procedure TForm1.ListBox1DrawItem(Control: TWinControl; Index: integer;
+procedure TfrmMain.lbProgramsDrawItem(Control: TWinControl; Index: integer;
   ARect: TRect; State: TOwnerDrawState);
 var
   bmp: TBGRABitmap;
@@ -95,19 +100,47 @@ begin
   bmp.Free;
   TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
   TListBox(Control).Canvas.TextRect(textRect, textRect.Left, textRect.Top +
-    (64 - TListBox(Control).Canvas.GetTextHeight(TListBox(Control).Items[Index])) div 2,
+    (TListBox(Control).ItemHeight - TListBox(Control).Canvas.GetTextHeight(
+    TListBox(Control).Items[Index])) div 2,
     TListBox(Control).Items[Index]);
 end;
 
-procedure TForm1.BGRAVirtualScreen1Redraw(Sender: TObject; Bitmap: TBGRABitmap);
+procedure TfrmMain.SearchAndFill(aSearch: string);
+var
+  contains: boolean;
+  i, j: integer;
+  arr: TStringArray;
+begin
+  lbPrograms.Clear;
+  arr := aSearch.ToUpper.Split(' ', TStringSplitOptions.ExcludeEmpty);
+
+  for j := 0 to programs.Count - 1 do
+  begin
+    contains := True;
+    for i := 0 to Length(arr) - 1 do
+    begin
+      if programs[j].Contains(arr[i]) then
+        continue
+      else
+        contains := False;
+    end;
+    if (contains) then
+    begin
+      lbPrograms.AddItem(programs[j], nil);
+    end;
+  end;
+end;
+
+procedure TfrmMain.vsBackgroundImageRedraw(Sender: TObject; Bitmap: TBGRABitmap);
 begin
   Bitmap.StretchPutImageProportionally(Rect(0, 0, Bitmap.Width, Bitmap.Height),
     taCenter, tlCenter, backgroundImage, dmSet, 255, True);
 end;
 
-procedure TForm1.BCMaterialEdit1Change(Sender: TObject);
+procedure TfrmMain.bcmeSearchChange(Sender: TObject);
 begin
-  debugln(BCMaterialEdit1.Edit.Text);
+  debugln(bcmeSearch.Edit.Text);
+  SearchAndFill(bcmeSearch.Edit.Text);
 end;
 
 end.

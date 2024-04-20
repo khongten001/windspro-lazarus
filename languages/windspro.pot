@@ -1,7 +1,8 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-#: tform1.caption
+#: tfrmmain.caption
+msgctxt "tfrmmain.caption"
 msgid "WinDS PRO"
 msgstr ""
 
