@@ -109,12 +109,18 @@ end;
 
 procedure TProgram.Run(aFile: string);
 var
-  outStr: string;
+  p: TProcess;
 begin
-  Application.Minimize;
-  RunCommandIndir(ExtractFilePath(path), path, aFile, outStr, [],
-    TShowWindowOptions.swoShowNormal);
-  Application.Restore;
+  p := DefaultTProcess.Create(nil);
+  p.Executable := path;
+  p.CurrentDirectory := ExtractFilePath(path);
+  if aFile <> '' then
+    p.Parameters.Add(aFile);
+  try
+    p.Execute;
+  finally
+    p.Free;
+  end;
 end;
 
 initialization
@@ -1141,7 +1147,7 @@ initialization
     programs[i].bitmap.LoadFromFile(programs[i].icon);
   end;
 
-  for i := programs.Count-1 downto 0 do
+  for i := programs.Count - 1 downto 0 do
   begin
     if not FileExists(programs[i].path) then
     begin
