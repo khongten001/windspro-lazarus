@@ -138,13 +138,13 @@ begin
     textRect.Left := TListBox(Control).ItemHeight;
     bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2,
       (TListBox(Control).ItemHeight - 32) div 2,
-      TProgram(TListBox(Control).Items.Objects[Index]).icon, dmDrawWithTransparency);
+      TProgram(TListBox(Control).Items.Objects[Index]).bitmap, dmDrawWithTransparency);
     bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
     TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
     TListBox(Control).Canvas.TextRect(textRect, textRect.Left, textRect.Top +
       (TListBox(Control).ItemHeight - TListBox(Control).Canvas.GetTextHeight(
       TListBox(Control).Items[Index])) div 2,
-      TListBox(Control).Items[Index]);
+      UpperCase(TListBox(Control).Items[Index]));
     finally
       bmp.Free;
     end;
@@ -207,7 +207,7 @@ begin
     contains := True;
     for i := 0 to Length(arr) - 1 do
     begin
-      if programs[j].Name.Contains(arr[i]) then
+      if programs[j].Name.ToUpper.Contains(arr[i]) then
         continue
       else
         contains := False;
