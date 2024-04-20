@@ -1141,6 +1141,14 @@ initialization
     programs[i].bitmap.LoadFromFile(programs[i].icon);
   end;
 
+  for i := programs.Count-1 downto 0 do
+  begin
+    if not FileExists(programs[i].path) then
+    begin
+      programs.Remove(programs[i]);
+    end;
+  end;
+
 finalization
   programs.Free;
 
