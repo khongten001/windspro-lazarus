@@ -10,7 +10,7 @@ uses
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
-    LazLoggerDummy
+  LazLoggerDummy
   {$endif};
 
 const

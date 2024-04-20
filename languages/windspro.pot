@@ -1,0 +1,11 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tform1.caption
+msgid "WinDS PRO"
+msgstr ""
+
+#: umain.search
+msgid "SEARCH"
+msgstr ""
+

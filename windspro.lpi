@@ -18,6 +18,10 @@
         <Resource_0 FileName="windspro.png" Type="RCDATA" ResourceName="BACKGROUND"/>
       </Resources>
     </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="languages"/>
+    </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
