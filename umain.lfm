@@ -6,6 +6,8 @@ object Form1: TForm1
   Caption = 'WinDS PRO'
   ClientHeight = 480
   ClientWidth = 640
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 640
   DesignTimePPI = 120
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -14,7 +16,7 @@ object Form1: TForm1
   WindowState = wsMaximized
   object BCPanel1: TBCPanel
     Left = 0
-    Height = 63
+    Height = 64
     Top = 0
     Width = 640
     Align = alTop
@@ -53,8 +55,8 @@ object Form1: TForm1
   end
   object BCPanel2: TBCPanel
     Left = 0
-    Height = 417
-    Top = 63
+    Height = 416
+    Top = 64
     Width = 500
     Align = alLeft
     Background.Color = clBtnFace
@@ -99,11 +101,25 @@ object Form1: TForm1
       AccentColor = clHighlight
       OnChange = BCMaterialEdit1Change
     end
+    object ListBox1: TListBox
+      Left = 1
+      Height = 414
+      Top = 1
+      Width = 498
+      Align = alClient
+      ItemHeight = 64
+      Options = []
+      Sorted = True
+      Style = lbOwnerDrawFixed
+      TabOrder = 1
+      OnDblClick = ListBox1DblClick
+      OnDrawItem = ListBox1DrawItem
+    end
   end
   object BGRAVirtualScreen1: TBGRAVirtualScreen
     Left = 500
-    Height = 417
-    Top = 63
+    Height = 416
+    Top = 64
     Width = 140
     OnRedraw = BGRAVirtualScreen1Redraw
     Align = alClient

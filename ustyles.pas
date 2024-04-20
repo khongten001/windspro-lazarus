@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, BGRABitmap, BGRABitmapTypes, BCPanel,
-  BCTypes, BCMaterialEdit, Dialogs,
+  BCTypes, BCMaterialEdit, Dialogs, StdCtrls,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -48,6 +48,13 @@ begin
           Color := BACKGROUND_DARK_COLOR;
           Edit.Color := BACKGROUND_DARK_COLOR;
           Edit.Font.Color := TEXT_COLOR;
+        end;
+      end;
+      'TListBox': begin
+        with aControl.Controls[i] as TListBox do
+        begin
+          BorderStyle := bsNone;
+          Color := BACKGROUND_COLOR;
         end;
       end;
     end;
