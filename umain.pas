@@ -44,7 +44,7 @@ type
       var Value: TStoredType);
     procedure JSONPropStorage1StoredValues0Save(Sender: TStoredValue;
       var Value: TStoredType);
-    procedure lbFilesDrawItem(Control: TWinControl; Index: Integer;
+    procedure lbFilesDrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
     procedure lbFilesSelectionChange(Sender: TObject; User: boolean);
     procedure vsBackgroundImageRedraw(Sender: TObject; Bitmap: TBGRABitmap);
@@ -59,7 +59,7 @@ type
     procedure FillFiles();
     procedure SearchAndFillFiles(aSearch: string; aSelectDefault: boolean = True);
     procedure SearchAndFill(aSearch: string);
-    procedure SearchFilesKeyDown(Sender: TObject; var Key: Word;
+    procedure SearchFilesKeyDown(Sender: TObject; var Key: word;
       Shift: TShiftState);
     procedure SearchKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
   public
@@ -126,7 +126,9 @@ begin
   bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
   textRect := ARect;
   textRect.Left := TListBox(Control).ItemHeight;
-  bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2, (TListBox(Control).ItemHeight - 32) div 2, TProgram(TListBox(Control).Items.Objects[Index]).icon, dmDrawWithTransparency);
+  bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2,
+    (TListBox(Control).ItemHeight - 32) div 2,
+    TProgram(TListBox(Control).Items.Objects[Index]).icon, dmDrawWithTransparency);
   bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
   bmp.Free;
   TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
@@ -139,7 +141,8 @@ end;
 procedure TfrmMain.FillFiles();
 begin
   files.Clear;
-  FindAllFiles(files, bcpFiles.Caption, '*.*', False);
+  if bcpFiles.Caption <> '' then
+    FindAllFiles(files, bcpFiles.Caption, '*.*', False);
 end;
 
 procedure TfrmMain.SearchAndFillFiles(aSearch: string; aSelectDefault: boolean);
@@ -201,7 +204,7 @@ begin
     lbPrograms.ItemIndex := 0;
 end;
 
-procedure TfrmMain.SearchFilesKeyDown(Sender: TObject; var Key: Word;
+procedure TfrmMain.SearchFilesKeyDown(Sender: TObject; var Key: word;
   Shift: TShiftState);
 begin
   if (Key = VK_DOWN) then
@@ -288,7 +291,7 @@ begin
   Value := bcpFiles.Caption;
 end;
 
-procedure TfrmMain.lbFilesDrawItem(Control: TWinControl; Index: Integer;
+procedure TfrmMain.lbFilesDrawItem(Control: TWinControl; Index: integer;
   ARect: TRect; State: TOwnerDrawState);
 var
   bmp: TBGRABitmap;
