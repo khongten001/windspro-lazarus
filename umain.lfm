@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 352
+  Left = 281
   Height = 672
-  Top = 32
+  Top = 27
   Width = 896
   Caption = 'WinDS PRO'
   ClientHeight = 672
@@ -277,7 +277,7 @@ object frmMain: TfrmMain
     TabOrder = 1
     object bcmeSearch: TBCMaterialEdit
       Left = 0
-      Height = 63
+      Height = 62
       Top = 0
       Width = 496
       Color = clWhite
@@ -287,8 +287,8 @@ object frmMain: TfrmMain
     end
     object lbPrograms: TListBox
       Left = 1
-      Height = 543
-      Top = 64
+      Height = 544
+      Top = 63
       Width = 318
       Align = alClient
       ItemHeight = 64
@@ -302,7 +302,7 @@ object frmMain: TfrmMain
     end
     object bcpFile: TBCPanel
       Left = 1
-      Height = 63
+      Height = 62
       Top = 1
       Width = 318
       Align = alTop
@@ -341,7 +341,7 @@ object frmMain: TfrmMain
       Visible = False
       object bcbClose: TBCButton
         Left = 277
-        Height = 61
+        Height = 60
         Top = 1
         Width = 40
         Align = alRight
@@ -501,7 +501,7 @@ object frmMain: TfrmMain
     end
     object bcmeSearchFiles: TBCMaterialEdit
       Left = 0
-      Height = 63
+      Height = 62
       Top = 0
       Width = 496
       Color = clWhite
@@ -513,7 +513,7 @@ object frmMain: TfrmMain
   object odOpen: TOpenDialog
     Filter = 'Images|*.png;*.jpg;*.jpeg;*.bmp'
     Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail]
-    Left = 32
+    Left = 33
     Top = 80
   end
   object sdOpen: TSelectDirectoryDialog

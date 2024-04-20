@@ -241,6 +241,10 @@ begin
     end;
     Key := 0;
   end;
+  if (Key = VK_RETURN) then
+  begin
+    bcmeSearch.Edit.SetFocus;
+  end;
 end;
 
 procedure TfrmMain.SearchKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
