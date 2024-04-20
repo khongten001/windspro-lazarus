@@ -15,6 +15,7 @@ object frmMain: TfrmMain
   LCLVersion = '3.2.0.0'
   WindowState = wsMaximized
   object bcpTop: TBCPanel
+    Tag = 1
     Left = 0
     Height = 64
     Top = 0

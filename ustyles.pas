@@ -36,7 +36,10 @@ begin
       'TBCPanel': begin
         with aControl.Controls[i] as TBCPanel do
         begin
-          Background.Color := BACKGROUND_COLOR;
+          if (Tag = 1) then
+            Background.Color := BACKGROUND_DARK_COLOR
+          else
+            Background.Color := BACKGROUND_COLOR;
           Border.Color := BORDER_COLOR;
           Border.Style := bboSolid;
           BorderBCStyle := bpsBorder;
