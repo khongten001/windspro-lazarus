@@ -145,10 +145,10 @@ object frmMain: TfrmMain
     end
   end
   object bcpLeft: TBCPanel
-    Left = 0
+    Left = 320
     Height = 608
     Top = 64
-    Width = 500
+    Width = 320
     Align = alLeft
     Background.Color = clBtnFace
     Background.Gradient1.StartColor = clWhite
@@ -196,13 +196,14 @@ object frmMain: TfrmMain
       Left = 1
       Height = 543
       Top = 64
-      Width = 498
+      Width = 318
       Align = alClient
       ItemHeight = 64
       Options = []
       Sorted = True
       Style = lbOwnerDrawFixed
       TabOrder = 1
+      TabStop = False
       OnDblClick = lbProgramsDblClick
       OnDrawItem = lbProgramsDrawItem
     end
@@ -210,7 +211,7 @@ object frmMain: TfrmMain
       Left = 1
       Height = 63
       Top = 1
-      Width = 498
+      Width = 318
       Align = alTop
       Background.Color = clBtnFace
       Background.Gradient1.StartColor = clWhite
@@ -246,7 +247,7 @@ object frmMain: TfrmMain
       TabOrder = 2
       Visible = False
       object bcbClose: TBCButton
-        Left = 457
+        Left = 277
         Height = 61
         Top = 1
         Width = 40
@@ -341,10 +342,10 @@ object frmMain: TfrmMain
     end
   end
   object vsBackgroundImage: TBGRAVirtualScreen
-    Left = 500
+    Left = 640
     Height = 608
     Top = 64
-    Width = 396
+    Width = 256
     OnRedraw = vsBackgroundImageRedraw
     Align = alClient
     Alignment = taLeftJustify
@@ -352,10 +353,89 @@ object frmMain: TfrmMain
     ParentColor = False
     TabOrder = 2
   end
+  object bcpFiles: TBCPanel
+    Left = 0
+    Height = 608
+    Top = 64
+    Width = 320
+    Align = alLeft
+    Background.Color = clBtnFace
+    Background.Gradient1.StartColor = clWhite
+    Background.Gradient1.EndColor = clBlack
+    Background.Gradient1.GradientType = gtLinear
+    Background.Gradient1.Point1XPercent = 0
+    Background.Gradient1.Point1YPercent = 0
+    Background.Gradient1.Point2XPercent = 0
+    Background.Gradient1.Point2YPercent = 100
+    Background.Gradient2.StartColor = clWhite
+    Background.Gradient2.EndColor = clBlack
+    Background.Gradient2.GradientType = gtLinear
+    Background.Gradient2.Point1XPercent = 0
+    Background.Gradient2.Point1YPercent = 0
+    Background.Gradient2.Point2XPercent = 0
+    Background.Gradient2.Point2YPercent = 100
+    Background.Gradient1EndPercent = 35
+    Background.Style = bbsColor
+    BevelInner = bvNone
+    BevelOuter = bvRaised
+    BevelWidth = 1
+    Border.Style = bboNone
+    FontEx.Color = clDefault
+    FontEx.FontQuality = fqSystemClearType
+    FontEx.Shadow = False
+    FontEx.ShadowRadius = 5
+    FontEx.ShadowOffsetX = 5
+    FontEx.ShadowOffsetY = 5
+    FontEx.Style = []
+    ParentBackground = False
+    Rounding.RoundX = 1
+    Rounding.RoundY = 1
+    TabOrder = 3
+    object lbFiles: TListBox
+      Left = 1
+      Height = 606
+      Top = 1
+      Width = 318
+      Align = alClient
+      ItemHeight = 64
+      Options = []
+      Sorted = True
+      Style = lbOwnerDrawFixed
+      TabOrder = 1
+      TabStop = False
+      OnDrawItem = lbFilesDrawItem
+      OnSelectionChange = lbFilesSelectionChange
+    end
+    object bcmeSearchFiles: TBCMaterialEdit
+      Left = 0
+      Height = 63
+      Top = 0
+      Width = 496
+      Color = clWhite
+      DisabledColor = 12103592
+      AccentColor = clHighlight
+      OnChange = bcmeSearchFilesChange
+    end
+  end
   object odOpen: TOpenDialog
     Filter = '*.*|*.*'
     Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail]
     Left = 32
+    Top = 80
+  end
+  object sdOpen: TSelectDirectoryDialog
+    Left = 144
+    Top = 80
+  end
+  object JSONPropStorage1: TJSONPropStorage
+    StoredValues = <    
+      item
+        Name = 'filesdir'
+        OnSave = JSONPropStorage1StoredValues0Save
+        OnRestore = JSONPropStorage1StoredValues0Restore
+      end>
+    Formatted = True
+    Left = 264
     Top = 80
   end
 end
