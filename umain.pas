@@ -21,7 +21,7 @@ type
   TfrmMain = class(TForm)
     bcmeSearch: TBCMaterialEdit;
     bcpTop: TBCPanel;
-    bvpLeft: TBCPanel;
+    bcpLeft: TBCPanel;
     vsBackgroundImage: TBGRAVirtualScreen;
     lbPrograms: TListBox;
     procedure bcmeSearchChange(Sender: TObject);
@@ -34,6 +34,7 @@ type
   private
     backgroundImage: TBGRABitmap;
     procedure SearchAndFill(aSearch: string);
+    procedure SearchKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
   public
 
   end;
@@ -55,6 +56,7 @@ begin
   styleForm(Self);
   bcmeSearch.Align := alTop;
   bcmeSearch.Title.Caption := SEARCH;
+  bcmeSearch.Edit.OnKeyDown := @SearchKeyDown;
   backgroundImage := TBGRABitmap.Create;
   backgroundImage.LoadFromResource('BACKGROUND');
   SearchAndFill('');
@@ -115,6 +117,34 @@ begin
     begin
       lbPrograms.AddItem(programs[j].Name, programs[j]);
     end;
+  end;
+
+  if (lbPrograms.Count > 0) then
+    lbPrograms.ItemIndex := 0;
+end;
+
+procedure TfrmMain.SearchKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+begin
+  if (Key = VK_DOWN) then
+  begin
+    if (lbPrograms.ItemIndex + 1 < lbPrograms.Count) then
+    begin
+      lbPrograms.ItemIndex := lbPrograms.ItemIndex + 1;
+    end;
+    Key := 0;
+  end;
+  if (Key = VK_UP) then
+  begin
+    if (lbPrograms.ItemIndex - 1 >= 0) then
+    begin
+      lbPrograms.ItemIndex := lbPrograms.ItemIndex - 1;
+    end;
+    Key := 0;
+  end;
+  if (Key = VK_RETURN) then
+  begin
+    if (lbPrograms.ItemIndex >= 0) and (lbPrograms.ItemIndex < lbPrograms.Count) then
+      lbProgramsDblClick(nil);
   end;
 end;
 

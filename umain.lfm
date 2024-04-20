@@ -53,7 +53,7 @@ object frmMain: TfrmMain
     Rounding.RoundY = 1
     TabOrder = 0
   end
-  object bvpLeft: TBCPanel
+  object bcpLeft: TBCPanel
     Left = 0
     Height = 608
     Top = 64

@@ -5,7 +5,7 @@ unit uprograms;
 interface
 
 uses
-  Classes, SysUtils, Generics.Collections, Process,
+  Classes, SysUtils, Generics.Collections, Process, Forms,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -44,8 +44,10 @@ procedure TProgram.Run(aFile: string);
 var
   outStr: string;
 begin
+  Application.Minimize;
   RunCommandIndir(ExtractFilePath(path), path, aFile, outStr, [],
     TShowWindowOptions.swoShowNormal);
+  Application.Restore;
 end;
 
 procedure AddProgram(aName: string; aPath: string);

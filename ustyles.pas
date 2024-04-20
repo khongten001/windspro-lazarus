@@ -46,6 +46,7 @@ begin
         begin
           AccentColor := ACCENT_COLOR;
           Color := BACKGROUND_DARK_COLOR;
+          DisabledColor := BORDER_COLOR;
           Edit.Color := BACKGROUND_DARK_COLOR;
           Edit.Font.Color := TEXT_COLOR;
         end;
