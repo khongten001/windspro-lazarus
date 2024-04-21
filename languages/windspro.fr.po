@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lainz\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: tfrmconfigstyles.bcbdefault.caption
+msgid "Default"
+msgstr "Défaut"
+
+#: tfrmconfigstyles.bcptop.caption
+msgctxt "tfrmconfigstyles.bcptop.caption"
+msgid "Colors"
+msgstr "Couleurs"
+
+#: tfrmconfigstyles.caption
+msgctxt "tfrmconfigstyles.caption"
+msgid "Colors"
+msgstr "Couleurs"
+
+#: tfrmconfigstyles.lblaccent.caption
+msgid "Accent"
+msgstr "Accent"
+
+#: tfrmconfigstyles.lblbackground1.caption
+msgctxt "tfrmconfigstyles.lblbackground1.caption"
+msgid "Background 1"
+msgstr "Arrière-plan 1"
+
+#: tfrmconfigstyles.lblbackground2.caption
+msgctxt "tfrmconfigstyles.lblbackground2.caption"
+msgid "Background 2"
+msgstr "Arrière-plan 2"
+
+#: tfrmconfigstyles.lblborder.caption
+msgid "Border"
+msgstr "Bordure"
+
+#: tfrmconfigstyles.lbltext.caption
+msgid "Text"
+msgstr "Texte"
+
+#: tfrmmain.bcbbackground.caption
+msgid "Background"
+msgstr "Fond"
+
+#: tfrmmain.bcbclose.caption
+msgctxt "tfrmmain.bcbclose.caption"
+msgid "X"
+msgstr "X"
+
+#: tfrmmain.bcbcolors.caption
+msgctxt "tfrmmain.bcbcolors.caption"
+msgid "Colors"
+msgstr "Couleurs"
+
+#: tfrmmain.bcbopen.caption
+msgid "Open"
+msgstr "Ouvrir"
+
+#: tfrmmain.bcptop.caption
+msgctxt "tfrmmain.bcptop.caption"
+msgid "WinDS PRO"
+msgstr "WinDS PRO"
+
+#: tfrmmain.caption
+msgctxt "tfrmmain.caption"
+msgid "WinDS PRO"
+msgstr "WinDS PRO"
+
+#: umain.search
+msgid "SEARCH"
+msgstr "RECHERCHER"
