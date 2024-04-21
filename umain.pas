@@ -195,6 +195,7 @@ end;
 
 procedure TfrmMain.SearchAndFill(aSearch: string);
 var
+  ext: string;
   contains: boolean;
   i, j: integer;
   arr: TStringArray;
@@ -212,6 +213,14 @@ begin
       else
         contains := False;
     end;
+
+    if contains and (bcpFile.Caption <> '') then
+    begin
+      ext := ExtractFileExt(bcpFile.Caption);
+      ext := '(' + ext.ToLower.Replace('.', '', [rfReplaceAll]) + ')';
+      contains := programs[j].extensions.Contains(ext);
+    end;
+
     if (contains) then
     begin
       lbPrograms.AddItem(programs[j].Name, programs[j]);
@@ -356,6 +365,7 @@ procedure TfrmMain.lbFilesSelectionChange(Sender: TObject; User: boolean);
 begin
   bcpFile.Caption := TListBox(Sender).Items[TListBox(Sender).ItemIndex];
   bcpFile.Visible := True;
+  SearchAndFill(bcmeSearch.Edit.Text);
 end;
 
 procedure TfrmMain.bcbOpenClick(Sender: TObject);
