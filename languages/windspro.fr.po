@@ -13,11 +13,11 @@ msgstr ""
 
 #: tfrmconfigstyles.bcbdefaultdark.caption
 msgctxt "tfrmconfigstyles.bcbdefaultdark.caption"
-msgid "Default Dark"
+msgid "Dark Theme"
 msgstr ""
 
 #: tfrmconfigstyles.bcbdefaultlight.caption
-msgid "Default Light"
+msgid "Light Theme"
 msgstr ""
 
 #: tfrmconfigstyles.bcptop.caption
@@ -46,14 +46,16 @@ msgstr "Arrière-plan 2"
 
 #: tfrmconfigstyles.lblborder1.caption
 #, fuzzy
+#| msgid "Border"
 msgctxt "tfrmconfigstyles.lblborder1.caption"
-msgid "Border"
+msgid "Border 1"
 msgstr "Bordure"
 
 #: tfrmconfigstyles.lblborder2.caption
 #, fuzzy
+#| msgid "Border"
 msgctxt "tfrmconfigstyles.lblborder2.caption"
-msgid "Border"
+msgid "Border 2"
 msgstr "Bordure"
 
 #: tfrmconfigstyles.lbltext1.caption
@@ -82,26 +84,10 @@ msgstr "Couleurs"
 msgid "Open"
 msgstr "Ouvrir"
 
-#: tfrmmain.bcpfileslist.caption
-msgid "bcpFilesList"
-msgstr ""
-
-#: tfrmmain.bcpprogramslist.caption
-msgid "bcpProgramsList"
-msgstr ""
-
-#: tfrmmain.bcpsearch.caption
-msgid "bcpSearch"
-msgstr ""
-
 #: tfrmmain.bcptop.caption
 msgctxt "tfrmmain.bcptop.caption"
 msgid "WinDS PRO"
 msgstr "WinDS PRO"
-
-#: tfrmmain.bvpsearchfiles.caption
-msgid "bvpSearchFiles"
-msgstr ""
 
 #: tfrmmain.caption
 msgctxt "tfrmmain.caption"

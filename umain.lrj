@@ -4,9 +4,5 @@
 {"hash":353982,"name":"tfrmmain.bcbopen.caption","sourcebytes":[79,112,101,110],"value":"Open"},
 {"hash":32370148,"name":"tfrmmain.bcbbackground.caption","sourcebytes":[66,97,99,107,103,114,111,117,110,100],"value":"Background"},
 {"hash":78001811,"name":"tfrmmain.bcbcolors.caption","sourcebytes":[67,111,108,111,114,115],"value":"Colors"},
-{"hash":88,"name":"tfrmmain.bcbclose.caption","sourcebytes":[88],"value":"X"},
-{"hash":94101560,"name":"tfrmmain.bcpsearch.caption","sourcebytes":[98,99,112,83,101,97,114,99,104],"value":"bcpSearch"},
-{"hash":54470276,"name":"tfrmmain.bcpprogramslist.caption","sourcebytes":[98,99,112,80,114,111,103,114,97,109,115,76,105,115,116],"value":"bcpProgramsList"},
-{"hash":76897491,"name":"tfrmmain.bvpsearchfiles.caption","sourcebytes":[98,118,112,83,101,97,114,99,104,70,105,108,101,115],"value":"bvpSearchFiles"},
-{"hash":72252836,"name":"tfrmmain.bcpfileslist.caption","sourcebytes":[98,99,112,70,105,108,101,115,76,105,115,116],"value":"bcpFilesList"}
+{"hash":88,"name":"tfrmmain.bcbclose.caption","sourcebytes":[88],"value":"X"}
 ]}

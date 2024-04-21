@@ -531,7 +531,6 @@ object frmMain: TfrmMain
       BevelOuter = bvRaised
       BevelWidth = 1
       Border.Style = bboNone
-      Caption = 'bcpSearch'
       FontEx.Color = clDefault
       FontEx.FontQuality = fqSystemClearType
       FontEx.Shadow = False
@@ -581,7 +580,6 @@ object frmMain: TfrmMain
       BevelOuter = bvRaised
       BevelWidth = 1
       Border.Style = bboNone
-      Caption = 'bcpProgramsList'
       FontEx.Color = clDefault
       FontEx.FontQuality = fqSystemClearType
       FontEx.Shadow = False
@@ -689,7 +687,6 @@ object frmMain: TfrmMain
       BevelOuter = bvRaised
       BevelWidth = 1
       Border.Style = bboNone
-      Caption = 'bvpSearchFiles'
       FontEx.Color = clDefault
       FontEx.FontQuality = fqSystemClearType
       FontEx.Shadow = False
@@ -739,7 +736,6 @@ object frmMain: TfrmMain
       BevelOuter = bvRaised
       BevelWidth = 1
       Border.Style = bboNone
-      Caption = 'bcpFilesList'
       FontEx.Color = clDefault
       FontEx.FontQuality = fqSystemClearType
       FontEx.Shadow = False

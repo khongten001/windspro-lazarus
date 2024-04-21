@@ -1137,6 +1137,17 @@ initialization
     extensions := '';
     programs.Add(GetSelf);
   end;
+with TProgram.Create do
+  begin
+    Name := 'ryujinx';
+    category := 'Nintendo Switch';
+    version := '1.0';
+    executable := 'ryujinx.exe';
+    folder := 'ryujinx';
+    icon := 'ryujinx.png';
+    extensions := '';
+    programs.Add(GetSelf);
+  end;
 
   for i := 0 to programs.Count - 1 do
   begin

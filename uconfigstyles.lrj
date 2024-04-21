@@ -5,9 +5,9 @@
 {"hash":233695186,"name":"tfrmconfigstyles.lblbackground2.caption","sourcebytes":[66,97,99,107,103,114,111,117,110,100,32,50],"value":"Background 2"},
 {"hash":75078740,"name":"tfrmconfigstyles.lblaccent.caption","sourcebytes":[65,99,99,101,110,116],"value":"Accent"},
 {"hash":95221297,"name":"tfrmconfigstyles.lbltext1.caption","sourcebytes":[84,101,120,116,32,49],"value":"Text 1"},
-{"hash":76974786,"name":"tfrmconfigstyles.lblborder1.caption","sourcebytes":[66,111,114,100,101,114],"value":"Border"},
-{"hash":131031115,"name":"tfrmconfigstyles.bcbdefaultdark.caption","sourcebytes":[68,101,102,97,117,108,116,32,68,97,114,107],"value":"Default Dark"},
-{"hash":219050372,"name":"tfrmconfigstyles.bcbdefaultlight.caption","sourcebytes":[68,101,102,97,117,108,116,32,76,105,103,104,116],"value":"Default Light"},
+{"hash":109756577,"name":"tfrmconfigstyles.lblborder1.caption","sourcebytes":[66,111,114,100,101,114,32,49],"value":"Border 1"},
+{"hash":224281781,"name":"tfrmconfigstyles.bcbdefaultdark.caption","sourcebytes":[68,97,114,107,32,84,104,101,109,101],"value":"Dark Theme"},
+{"hash":101193669,"name":"tfrmconfigstyles.bcbdefaultlight.caption","sourcebytes":[76,105,103,104,116,32,84,104,101,109,101],"value":"Light Theme"},
 {"hash":95221298,"name":"tfrmconfigstyles.lbltext2.caption","sourcebytes":[84,101,120,116,32,50],"value":"Text 2"},
-{"hash":76974786,"name":"tfrmconfigstyles.lblborder2.caption","sourcebytes":[66,111,114,100,101,114],"value":"Border"}
+{"hash":109756578,"name":"tfrmconfigstyles.lblborder2.caption","sourcebytes":[66,111,114,100,101,114,32,50],"value":"Border 2"}
 ]}
