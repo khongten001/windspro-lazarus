@@ -208,7 +208,7 @@ begin
     contains := True;
     for i := 0 to Length(arr) - 1 do
     begin
-      if programs[j].Name.ToUpper.Contains(arr[i]) then
+      if programs[j].Name.ToUpper.Contains(arr[i]) or programs[j].category.ToUpper.Contains(arr[i]) then
         continue
       else
         contains := False;
