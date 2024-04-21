@@ -96,6 +96,7 @@ procedure styleForm(aForm: TForm);
 begin
   aForm.Color := BACKGROUND_COLOR;
   styleControl(aForm);
+  aForm.Invalidate;
 end;
 
 procedure defaultColors;
