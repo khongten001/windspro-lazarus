@@ -11,9 +11,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
+#: tfrmconfigstyles.bcptop.caption
+msgctxt "tfrmconfigstyles.bcptop.caption"
+msgid "Colors"
+msgstr ""
+
 #: tfrmconfigstyles.caption
 msgctxt "tfrmconfigstyles.caption"
 msgid "Colors"
+msgstr ""
+
+#: tfrmconfigstyles.lblaccent.caption
+msgid "Accent"
+msgstr ""
+
+#: tfrmconfigstyles.lblbackground1.caption
+msgctxt "tfrmconfigstyles.lblbackground1.caption"
+msgid "Background 1"
+msgstr ""
+
+#: tfrmconfigstyles.lblbackground2.caption
+msgctxt "tfrmconfigstyles.lblbackground2.caption"
+msgid "Background 2"
+msgstr ""
+
+#: tfrmconfigstyles.lblborder.caption
+msgid "Border"
+msgstr ""
+
+#: tfrmconfigstyles.lbltext.caption
+msgid "Text"
 msgstr ""
 
 #: tfrmmain.bcbbackground.caption

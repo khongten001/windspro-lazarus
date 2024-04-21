@@ -389,7 +389,13 @@ end;
 
 procedure TfrmMain.bcbColorsClick(Sender: TObject);
 begin
+  uconfigstyles.frmConfigStyles.cbAccent.ButtonColor := ACCENT_COLOR;
+  uconfigstyles.frmConfigStyles.cbBackground1.ButtonColor := BACKGROUND_COLOR;
+  uconfigstyles.frmConfigStyles.cbBackground2.ButtonColor := BACKGROUND_DARK_COLOR;
+   uconfigstyles.frmConfigStyles.cbText.ButtonColor := TEXT_COLOR;
+   uconfigstyles.frmConfigStyles.cbBorder.ButtonColor := BORDER_COLOR;
   uconfigstyles.frmConfigStyles.ShowModal;
+  styleForm(Self);
 end;
 
 procedure TfrmMain.bcbBackgroundClick(Sender: TObject);

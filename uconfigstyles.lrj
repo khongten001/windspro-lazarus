@@ -1,3 +1,9 @@
 {"version":1,"strings":[
-{"hash":78001811,"name":"tfrmconfigstyles.caption","sourcebytes":[67,111,108,111,114,115],"value":"Colors"}
+{"hash":78001811,"name":"tfrmconfigstyles.caption","sourcebytes":[67,111,108,111,114,115],"value":"Colors"},
+{"hash":78001811,"name":"tfrmconfigstyles.bcptop.caption","sourcebytes":[67,111,108,111,114,115],"value":"Colors"},
+{"hash":233695185,"name":"tfrmconfigstyles.lblbackground1.caption","sourcebytes":[66,97,99,107,103,114,111,117,110,100,32,49],"value":"Background 1"},
+{"hash":233695186,"name":"tfrmconfigstyles.lblbackground2.caption","sourcebytes":[66,97,99,107,103,114,111,117,110,100,32,50],"value":"Background 2"},
+{"hash":75078740,"name":"tfrmconfigstyles.lblaccent.caption","sourcebytes":[65,99,99,101,110,116],"value":"Accent"},
+{"hash":371956,"name":"tfrmconfigstyles.lbltext.caption","sourcebytes":[84,101,120,116],"value":"Text"},
+{"hash":76974786,"name":"tfrmconfigstyles.lblborder.caption","sourcebytes":[66,111,114,100,101,114],"value":"Border"}
 ]}

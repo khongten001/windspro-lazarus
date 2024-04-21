@@ -103,6 +103,7 @@
         <Filename Value="uconfigstyles.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmConfigStyles"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>

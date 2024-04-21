@@ -79,6 +79,12 @@ begin
           StateClicked.Background.Color := BACKGROUND_COLOR;
         end;
       end;
+      'TLabel': begin
+        with aControl.Controls[i] as TLabel do
+        begin
+          Font.Color := TEXT_COLOR;
+        end;
+      end;
     end;
     if aControl.Controls[i] is TWinControl then
       styleControl(TWinControl(aControl.Controls[i]));
