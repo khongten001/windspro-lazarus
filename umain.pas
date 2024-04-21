@@ -52,6 +52,26 @@ type
       var Value: TStoredType);
     procedure JSONPropStorage1StoredValues1Save(Sender: TStoredValue;
       var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues2Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues2Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues3Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues3Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues4Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues4Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues5Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues5Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues6Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues6Save(Sender: TStoredValue;
+      var Value: TStoredType);
     procedure lbFilesDrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
     procedure lbFilesSelectionChange(Sender: TObject; User: boolean);
@@ -89,7 +109,6 @@ implementation
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  styleForm(Self);
   files := TStringList.Create;
   bcmeSearch.Align := alTop;
   bcmeSearch.Title.Caption := SEARCH;
@@ -109,6 +128,7 @@ begin
     bcpFile.Visible := True;
   end;
   SearchAndFill('');
+  styleForm(Self);
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
@@ -340,6 +360,71 @@ procedure TfrmMain.JSONPropStorage1StoredValues1Save(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   Value := backgroundImageFileName;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues2Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+  BACKGROUND_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues2Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := BACKGROUND_COLOR.ToString;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues3Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+  BACKGROUND_DARK_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues3Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := BACKGROUND_DARK_COLOR.ToString;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues4Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+  ACCENT_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues4Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := ACCENT_COLOR.ToString;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues5Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+  BORDER_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues5Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := BORDER_COLOR.ToString;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues6Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+  TEXT_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues6Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := TEXT_COLOR.ToString;
 end;
 
 procedure TfrmMain.lbFilesDrawItem(Control: TWinControl; Index: integer;
