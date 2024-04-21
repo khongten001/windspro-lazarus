@@ -11,9 +11,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: tfrmconfigstyles.bcbdefault.caption
-msgid "Default"
-msgstr "Défaut"
+#: tfrmconfigstyles.bcbdefaultdark.caption
+msgctxt "tfrmconfigstyles.bcbdefaultdark.caption"
+msgid "Default Dark"
+msgstr ""
+
+#: tfrmconfigstyles.bcbdefaultlight.caption
+msgid "Default Light"
+msgstr ""
 
 #: tfrmconfigstyles.bcptop.caption
 msgctxt "tfrmconfigstyles.bcptop.caption"
@@ -39,13 +44,25 @@ msgctxt "tfrmconfigstyles.lblbackground2.caption"
 msgid "Background 2"
 msgstr "Arrière-plan 2"
 
-#: tfrmconfigstyles.lblborder.caption
+#: tfrmconfigstyles.lblborder1.caption
+#, fuzzy
+msgctxt "tfrmconfigstyles.lblborder1.caption"
 msgid "Border"
 msgstr "Bordure"
 
-#: tfrmconfigstyles.lbltext.caption
-msgid "Text"
-msgstr "Texte"
+#: tfrmconfigstyles.lblborder2.caption
+#, fuzzy
+msgctxt "tfrmconfigstyles.lblborder2.caption"
+msgid "Border"
+msgstr "Bordure"
+
+#: tfrmconfigstyles.lbltext1.caption
+msgid "Text 1"
+msgstr ""
+
+#: tfrmconfigstyles.lbltext2.caption
+msgid "Text 2"
+msgstr ""
 
 #: tfrmmain.bcbbackground.caption
 msgid "Background"
@@ -65,10 +82,26 @@ msgstr "Couleurs"
 msgid "Open"
 msgstr "Ouvrir"
 
+#: tfrmmain.bcpfileslist.caption
+msgid "bcpFilesList"
+msgstr ""
+
+#: tfrmmain.bcpprogramslist.caption
+msgid "bcpProgramsList"
+msgstr ""
+
+#: tfrmmain.bcpsearch.caption
+msgid "bcpSearch"
+msgstr ""
+
 #: tfrmmain.bcptop.caption
 msgctxt "tfrmmain.bcptop.caption"
 msgid "WinDS PRO"
 msgstr "WinDS PRO"
+
+#: tfrmmain.bvpsearchfiles.caption
+msgid "bvpSearchFiles"
+msgstr ""
 
 #: tfrmmain.caption
 msgctxt "tfrmmain.caption"
@@ -78,3 +111,4 @@ msgstr "WinDS PRO"
 #: umain.search
 msgid "SEARCH"
 msgstr "RECHERCHER"
+

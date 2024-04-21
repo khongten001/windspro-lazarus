@@ -26,6 +26,10 @@ type
     bcbBackground: TBCButton;
     bcmeSearch: TBCMaterialEdit;
     bcmeSearchFiles: TBCMaterialEdit;
+    bcpSearch: TBCPanel;
+    bvpSearchFiles: TBCPanel;
+    bcpFilesList: TBCPanel;
+    bcpProgramsList: TBCPanel;
     bcpFiles: TBCPanel;
     bcpFile: TBCPanel;
     bcpTop: TBCPanel;
@@ -42,8 +46,6 @@ type
     procedure bcbOpenClick(Sender: TObject);
     procedure bcmeSearchChange(Sender: TObject);
     procedure bcmeSearchFilesChange(Sender: TObject);
-    procedure JSONPropStorage1RestoreProperties(Sender: TObject);
-    procedure JSONPropStorage1SaveProperties(Sender: TObject);
     procedure JSONPropStorage1StoredValues0Restore(Sender: TStoredValue;
       var Value: TStoredType);
     procedure JSONPropStorage1StoredValues0Save(Sender: TStoredValue;
@@ -71,6 +73,14 @@ type
     procedure JSONPropStorage1StoredValues6Restore(Sender: TStoredValue;
       var Value: TStoredType);
     procedure JSONPropStorage1StoredValues6Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues7Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues7Save(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues8Restore(Sender: TStoredValue;
+      var Value: TStoredType);
+    procedure JSONPropStorage1StoredValues8Save(Sender: TStoredValue;
       var Value: TStoredType);
     procedure lbFilesDrawItem(Control: TWinControl; Index: integer;
       ARect: TRect; State: TOwnerDrawState);
@@ -321,16 +331,6 @@ begin
   SearchAndFillFiles(bcmeSearchFiles.Edit.Text);
 end;
 
-procedure TfrmMain.JSONPropStorage1RestoreProperties(Sender: TObject);
-begin
-
-end;
-
-procedure TfrmMain.JSONPropStorage1SaveProperties(Sender: TObject);
-begin
-
-end;
-
 procedure TfrmMain.JSONPropStorage1StoredValues0Restore(Sender: TStoredValue;
   var Value: TStoredType);
 begin
@@ -366,7 +366,7 @@ procedure TfrmMain.JSONPropStorage1StoredValues2Restore(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   if Value <> '' then
-  BACKGROUND_COLOR.FromString(Value);
+    BACKGROUND_COLOR.FromString(Value);
 end;
 
 procedure TfrmMain.JSONPropStorage1StoredValues2Save(Sender: TStoredValue;
@@ -379,7 +379,7 @@ procedure TfrmMain.JSONPropStorage1StoredValues3Restore(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   if Value <> '' then
-  BACKGROUND_DARK_COLOR.FromString(Value);
+    BACKGROUND_DARK_COLOR.FromString(Value);
 end;
 
 procedure TfrmMain.JSONPropStorage1StoredValues3Save(Sender: TStoredValue;
@@ -392,7 +392,7 @@ procedure TfrmMain.JSONPropStorage1StoredValues4Restore(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   if Value <> '' then
-  ACCENT_COLOR.FromString(Value);
+    ACCENT_COLOR.FromString(Value);
 end;
 
 procedure TfrmMain.JSONPropStorage1StoredValues4Save(Sender: TStoredValue;
@@ -405,7 +405,7 @@ procedure TfrmMain.JSONPropStorage1StoredValues5Restore(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   if Value <> '' then
-  BORDER_COLOR.FromString(Value);
+    BORDER_COLOR.FromString(Value);
 end;
 
 procedure TfrmMain.JSONPropStorage1StoredValues5Save(Sender: TStoredValue;
@@ -418,13 +418,39 @@ procedure TfrmMain.JSONPropStorage1StoredValues6Restore(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   if Value <> '' then
-  TEXT_COLOR.FromString(Value);
+    TEXT_COLOR.FromString(Value);
 end;
 
 procedure TfrmMain.JSONPropStorage1StoredValues6Save(Sender: TStoredValue;
   var Value: TStoredType);
 begin
   Value := TEXT_COLOR.ToString;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues7Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+    BORDER_DARK_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues7Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := BORDER_DARK_COLOR.ToString;
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues8Restore(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  if Value <> '' then
+    TEXT_DARK_COLOR.FromString(Value);
+end;
+
+procedure TfrmMain.JSONPropStorage1StoredValues8Save(Sender: TStoredValue;
+  var Value: TStoredType);
+begin
+  Value := TEXT_DARK_COLOR.ToString;
 end;
 
 procedure TfrmMain.lbFilesDrawItem(Control: TWinControl; Index: integer;
@@ -478,8 +504,10 @@ begin
   uconfigstyles.frmConfigStyles.cbAccent.ButtonColor := ACCENT_COLOR;
   uconfigstyles.frmConfigStyles.cbBackground1.ButtonColor := BACKGROUND_COLOR;
   uconfigstyles.frmConfigStyles.cbBackground2.ButtonColor := BACKGROUND_DARK_COLOR;
-  uconfigstyles.frmConfigStyles.cbText.ButtonColor := TEXT_COLOR;
-  uconfigstyles.frmConfigStyles.cbBorder.ButtonColor := BORDER_COLOR;
+  uconfigstyles.frmConfigStyles.cbText1.ButtonColor := TEXT_COLOR;
+  uconfigstyles.frmConfigStyles.cbText2.ButtonColor := TEXT_DARK_COLOR;
+  uconfigstyles.frmConfigStyles.cbBorder1.ButtonColor := BORDER_COLOR;
+  uconfigstyles.frmConfigStyles.cbBorder2.ButtonColor := BORDER_DARK_COLOR;
   uconfigstyles.frmConfigStyles.ShowModal;
   styleForm(Self);
 end;

@@ -13,25 +13,33 @@ type
   { TfrmConfigStyles }
 
   TfrmConfigStyles = class(TForm)
-    bcbDefault: TBCButton;
+    bcbDefaultDark: TBCButton;
+    bcbDefaultLight: TBCButton;
     bcpTop: TBCPanel;
     bcpClient: TBCPanel;
     cbAccent: TColorButton;
-    cbText: TColorButton;
-    cbBorder: TColorButton;
+    cbBorder2: TColorButton;
+    cbText1: TColorButton;
+    cbBorder1: TColorButton;
     cbBackground1: TColorButton;
     cbBackground2: TColorButton;
+    cbText2: TColorButton;
     lblAccent: TLabel;
-    lblText: TLabel;
-    lblBorder: TLabel;
+    lblBorder2: TLabel;
+    lblText1: TLabel;
+    lblBorder1: TLabel;
     lblBackground1: TLabel;
     lblBackground2: TLabel;
-    procedure bcbDefaultClick(Sender: TObject);
+    lblText2: TLabel;
+    procedure bcbDefaultDarkClick(Sender: TObject);
+    procedure bcbDefaultLightClick(Sender: TObject);
     procedure cbAccentColorChanged(Sender: TObject);
     procedure cbBackground1ColorChanged(Sender: TObject);
     procedure cbBackground2ColorChanged(Sender: TObject);
-    procedure cbBorderColorChanged(Sender: TObject);
-    procedure cbTextColorChanged(Sender: TObject);
+    procedure cbBorder1ColorChanged(Sender: TObject);
+    procedure cbBorder2ColorChanged(Sender: TObject);
+    procedure cbText1ColorChanged(Sender: TObject);
+    procedure cbText2ColorChanged(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -66,14 +74,28 @@ begin
   styleForm(Self);
 end;
 
-procedure TfrmConfigStyles.bcbDefaultClick(Sender: TObject);
+procedure TfrmConfigStyles.bcbDefaultDarkClick(Sender: TObject);
 begin
   defaultColors;
   cbAccent.ButtonColor := ACCENT_COLOR;
   cbBackground1.ButtonColor := BACKGROUND_COLOR;
   cbBackground2.ButtonColor := BACKGROUND_DARK_COLOR;
-  cbBorder.ButtonColor := BORDER_COLOR;
-  cbText.ButtonColor := TEXT_COLOR;
+  cbBorder1.ButtonColor := BORDER_COLOR;
+  cbBorder2.ButtonColor := BORDER_DARK_COLOR;
+  cbText1.ButtonColor := TEXT_COLOR;
+  cbText2.ButtonColor := TEXT_DARK_COLOR;
+end;
+
+procedure TfrmConfigStyles.bcbDefaultLightClick(Sender: TObject);
+begin
+  defaultLightColors;
+  cbAccent.ButtonColor := ACCENT_COLOR;
+  cbBackground1.ButtonColor := BACKGROUND_COLOR;
+  cbBackground2.ButtonColor := BACKGROUND_DARK_COLOR;
+  cbBorder1.ButtonColor := BORDER_COLOR;
+  cbBorder2.ButtonColor := BORDER_DARK_COLOR;
+  cbText1.ButtonColor := TEXT_COLOR;
+  cbText2.ButtonColor := TEXT_DARK_COLOR;
 end;
 
 procedure TfrmConfigStyles.cbBackground2ColorChanged(Sender: TObject);
@@ -82,15 +104,27 @@ begin
   styleForm(Self);
 end;
 
-procedure TfrmConfigStyles.cbBorderColorChanged(Sender: TObject);
+procedure TfrmConfigStyles.cbBorder1ColorChanged(Sender: TObject);
 begin
   BORDER_COLOR := TColorButton(Sender).ButtonColor;
   styleForm(Self);
 end;
 
-procedure TfrmConfigStyles.cbTextColorChanged(Sender: TObject);
+procedure TfrmConfigStyles.cbBorder2ColorChanged(Sender: TObject);
+begin
+  BORDER_DARK_COLOR := TColorButton(Sender).ButtonColor;
+  styleForm(Self);
+end;
+
+procedure TfrmConfigStyles.cbText1ColorChanged(Sender: TObject);
 begin
   TEXT_COLOR := TColorButton(Sender).ButtonColor;
+  styleForm(Self);
+end;
+
+procedure TfrmConfigStyles.cbText2ColorChanged(Sender: TObject);
+begin
+  TEXT_DARK_COLOR := TColorButton(Sender).ButtonColor;
   styleForm(Self);
 end;
 

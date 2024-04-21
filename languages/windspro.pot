@@ -1,8 +1,13 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-#: tfrmconfigstyles.bcbdefault.caption
-msgid "Default"
+#: tfrmconfigstyles.bcbdefaultdark.caption
+msgctxt "tfrmconfigstyles.bcbdefaultdark.caption"
+msgid "Default Dark"
+msgstr ""
+
+#: tfrmconfigstyles.bcbdefaultlight.caption
+msgid "Default Light"
 msgstr ""
 
 #: tfrmconfigstyles.bcptop.caption
@@ -29,12 +34,22 @@ msgctxt "tfrmconfigstyles.lblbackground2.caption"
 msgid "Background 2"
 msgstr ""
 
-#: tfrmconfigstyles.lblborder.caption
+#: tfrmconfigstyles.lblborder1.caption
+msgctxt "tfrmconfigstyles.lblborder1.caption"
 msgid "Border"
 msgstr ""
 
-#: tfrmconfigstyles.lbltext.caption
-msgid "Text"
+#: tfrmconfigstyles.lblborder2.caption
+msgctxt "tfrmconfigstyles.lblborder2.caption"
+msgid "Border"
+msgstr ""
+
+#: tfrmconfigstyles.lbltext1.caption
+msgid "Text 1"
+msgstr ""
+
+#: tfrmconfigstyles.lbltext2.caption
+msgid "Text 2"
 msgstr ""
 
 #: tfrmmain.bcbbackground.caption
@@ -55,9 +70,25 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
+#: tfrmmain.bcpfileslist.caption
+msgid "bcpFilesList"
+msgstr ""
+
+#: tfrmmain.bcpprogramslist.caption
+msgid "bcpProgramsList"
+msgstr ""
+
+#: tfrmmain.bcpsearch.caption
+msgid "bcpSearch"
+msgstr ""
+
 #: tfrmmain.bcptop.caption
 msgctxt "tfrmmain.bcptop.caption"
 msgid "WinDS PRO"
+msgstr ""
+
+#: tfrmmain.bvpsearchfiles.caption
+msgid "bvpSearchFiles"
 msgstr ""
 
 #: tfrmmain.caption
