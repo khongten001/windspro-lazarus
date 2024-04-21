@@ -1,6 +1,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: tfrmconfigstyles.bcbdefault.caption
+msgid "Default"
+msgstr ""
+
 #: tfrmconfigstyles.bcptop.caption
 msgctxt "tfrmconfigstyles.bcptop.caption"
 msgid "Colors"
@@ -49,6 +53,11 @@ msgstr ""
 
 #: tfrmmain.bcbopen.caption
 msgid "Open"
+msgstr ""
+
+#: tfrmmain.bcptop.caption
+msgctxt "tfrmmain.bcptop.caption"
+msgid "WinDS PRO"
 msgstr ""
 
 #: tfrmmain.caption

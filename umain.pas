@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
-  ustyles, BCPanel, BCMaterialEdit, BGRAVirtualScreen, BGRABitmap, BCTypes,
+  ustyles, BCPanel, BCMaterialEdit, BGRAVirtualScreen, BGRABitmap,
   BCListBox, BCButton, BGRABitmapTypes, LCLType, JSONPropStorage, FileUtil,
   uprograms, uconfigstyles,
   {$ifdef DEBUG}
@@ -135,18 +135,18 @@ begin
     else
       bmp := TBGRABitmap.Create(ARect.Width, ARect.Height, BACKGROUND_COLOR);
     try
-    bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
-    textRect := ARect;
-    textRect.Left := TListBox(Control).ItemHeight;
-    bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2,
-      (TListBox(Control).ItemHeight - 32) div 2,
-      TProgram(TListBox(Control).Items.Objects[Index]).bitmap, dmDrawWithTransparency);
-    bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
-    TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
-    TListBox(Control).Canvas.TextRect(textRect, textRect.Left, textRect.Top +
-      (TListBox(Control).ItemHeight - TListBox(Control).Canvas.GetTextHeight(
-      TListBox(Control).Items[Index])) div 2,
-      UpperCase(TListBox(Control).Items[Index]));
+      bmp.DrawHorizLine(0, bmp.Height - 1, bmp.Width, BORDER_COLOR);
+      textRect := ARect;
+      textRect.Left := TListBox(Control).ItemHeight;
+      bmp.PutImage((TListBox(Control).ItemHeight - 32) div 2,
+        (TListBox(Control).ItemHeight - 32) div 2,
+        TProgram(TListBox(Control).Items.Objects[Index]).bitmap, dmDrawWithTransparency);
+      bmp.Draw(TListBox(Control).Canvas, ARect.Left, ARect.Top, True);
+      TListBox(Control).Canvas.Font.Color := TEXT_COLOR;
+      TListBox(Control).Canvas.TextRect(textRect, textRect.Left,
+        textRect.Top + (TListBox(Control).ItemHeight -
+        TListBox(Control).Canvas.GetTextHeight(TListBox(Control).Items[Index])) div 2,
+        UpperCase(TListBox(Control).Items[Index]));
     finally
       bmp.Free;
     end;
@@ -210,7 +210,8 @@ begin
     contains := True;
     for i := 0 to Length(arr) - 1 do
     begin
-      if programs[j].Name.ToUpper.Contains(arr[i]) or programs[j].category.ToUpper.Contains(arr[i]) then
+      if programs[j].Name.ToUpper.Contains(arr[i]) or
+        programs[j].category.ToUpper.Contains(arr[i]) then
         continue
       else
         contains := False;
@@ -392,8 +393,8 @@ begin
   uconfigstyles.frmConfigStyles.cbAccent.ButtonColor := ACCENT_COLOR;
   uconfigstyles.frmConfigStyles.cbBackground1.ButtonColor := BACKGROUND_COLOR;
   uconfigstyles.frmConfigStyles.cbBackground2.ButtonColor := BACKGROUND_DARK_COLOR;
-   uconfigstyles.frmConfigStyles.cbText.ButtonColor := TEXT_COLOR;
-   uconfigstyles.frmConfigStyles.cbBorder.ButtonColor := BORDER_COLOR;
+  uconfigstyles.frmConfigStyles.cbText.ButtonColor := TEXT_COLOR;
+  uconfigstyles.frmConfigStyles.cbBorder.ButtonColor := BORDER_COLOR;
   uconfigstyles.frmConfigStyles.ShowModal;
   styleForm(Self);
 end;

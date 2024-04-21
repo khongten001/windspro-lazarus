@@ -42,6 +42,7 @@ object frmMain: TfrmMain
     BevelOuter = bvRaised
     BevelWidth = 1
     Border.Style = bboNone
+    Caption = 'WinDS PRO'
     FontEx.Color = clDefault
     FontEx.FontQuality = fqSystemClearType
     FontEx.Shadow = False

@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ustyles,
-  BCPanel;
+  BCPanel, BCButton, BGRABitmap, BGRABitmapTypes;
 
 type
 
   { TfrmConfigStyles }
 
   TfrmConfigStyles = class(TForm)
+    bcbDefault: TBCButton;
     bcpTop: TBCPanel;
     bcpClient: TBCPanel;
     cbAccent: TColorButton;
@@ -25,6 +26,7 @@ type
     lblBorder: TLabel;
     lblBackground1: TLabel;
     lblBackground2: TLabel;
+    procedure bcbDefaultClick(Sender: TObject);
     procedure cbAccentColorChanged(Sender: TObject);
     procedure cbBackground1ColorChanged(Sender: TObject);
     procedure cbBackground2ColorChanged(Sender: TObject);
@@ -64,6 +66,16 @@ begin
   styleForm(Self);
 end;
 
+procedure TfrmConfigStyles.bcbDefaultClick(Sender: TObject);
+begin
+  defaultColors;
+  cbAccent.ButtonColor := ACCENT_COLOR;
+  cbBackground1.ButtonColor := BACKGROUND_COLOR;
+  cbBackground2.ButtonColor := BACKGROUND_DARK_COLOR;
+  cbBorder.ButtonColor := BORDER_COLOR;
+  cbText.ButtonColor := TEXT_COLOR;
+end;
+
 procedure TfrmConfigStyles.cbBackground2ColorChanged(Sender: TObject);
 begin
   BACKGROUND_DARK_COLOR := TColorButton(Sender).ButtonColor;
@@ -88,4 +100,3 @@ begin
 end;
 
 end.
-

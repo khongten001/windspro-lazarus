@@ -13,14 +13,15 @@ uses
   LazLoggerDummy
   {$endif};
 
-const
-  ACCENT_COLOR: TBGRAPixel = (blue: 214; green: 102; red: 3; alpha: 255);
-  BACKGROUND_COLOR: TBGRAPixel = (blue: 46; green: 41; red: 36; alpha: 255);
-  BACKGROUND_DARK_COLOR: TBGRAPixel = (blue: 37; green: 33; red: 29; alpha: 255);
-  BORDER_COLOR: TBGRAPixel = (blue: 20; green: 20; red: 20; alpha: 255);
-  TEXT_COLOR: TBGRAPixel = (blue: 250; green: 248; red: 246; alpha: 255);
+var
+  ACCENT_COLOR: TBGRAPixel;
+  BACKGROUND_COLOR: TBGRAPixel;
+  BACKGROUND_DARK_COLOR: TBGRAPixel;
+  BORDER_COLOR: TBGRAPixel;
+  TEXT_COLOR: TBGRAPixel;
 
 procedure styleForm(aForm: TForm);
+procedure defaultColors;
 
 implementation
 
@@ -96,5 +97,17 @@ begin
   aForm.Color := BACKGROUND_COLOR;
   styleControl(aForm);
 end;
+
+procedure defaultColors;
+begin
+  ACCENT_COLOR := BGRA(3, 102, 214);
+  BACKGROUND_COLOR := BGRA(36, 41, 46);
+  BACKGROUND_DARK_COLOR := BGRA(29, 33, 37);
+  BORDER_COLOR := BGRA(20, 20, 20);
+  TEXT_COLOR := BGRA(246, 248, 250);
+end;
+
+initialization
+  defaultColors;
 
 end.
