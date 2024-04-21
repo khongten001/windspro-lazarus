@@ -56,11 +56,11 @@ msgstr "Borde 2"
 
 #: tfrmconfigstyles.lbltext1.caption
 msgid "Text 1"
-msgstr ""
+msgstr "Texto 1"
 
 #: tfrmconfigstyles.lbltext2.caption
 msgid "Text 2"
-msgstr ""
+msgstr "Texto 2"
 
 #: tfrmmain.bcbbackground.caption
 msgid "Background"
