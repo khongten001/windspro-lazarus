@@ -103,7 +103,7 @@ begin
         end;
       end;
     end;
-    if aControl.Controls[i] is TWinControl then
+    if (aControl.Controls[i] is TWinControl) and not (aControl.Controls[i] is TBCMaterialEdit) then
       styleControl(TWinControl(aControl.Controls[i]));
   end;
 end;
