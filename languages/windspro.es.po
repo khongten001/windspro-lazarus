@@ -13,65 +13,64 @@ msgstr ""
 
 #: tfrmconfigstyles.bcbdefault.caption
 msgid "Default"
-msgstr ""
+msgstr "Predeterminado"
 
 #: tfrmconfigstyles.bcptop.caption
 msgctxt "tfrmconfigstyles.bcptop.caption"
 msgid "Colors"
-msgstr ""
+msgstr "Colores"
 
 #: tfrmconfigstyles.caption
 msgctxt "tfrmconfigstyles.caption"
 msgid "Colors"
-msgstr ""
+msgstr "Colores"
 
 #: tfrmconfigstyles.lblaccent.caption
 msgid "Accent"
-msgstr ""
+msgstr "Acento"
 
 #: tfrmconfigstyles.lblbackground1.caption
 msgctxt "tfrmconfigstyles.lblbackground1.caption"
 msgid "Background 1"
-msgstr ""
+msgstr "Fondo 1"
 
 #: tfrmconfigstyles.lblbackground2.caption
 msgctxt "tfrmconfigstyles.lblbackground2.caption"
 msgid "Background 2"
-msgstr ""
+msgstr "Fondo 2"
 
 #: tfrmconfigstyles.lblborder.caption
 msgid "Border"
-msgstr ""
+msgstr "Borde"
 
 #: tfrmconfigstyles.lbltext.caption
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: tfrmmain.bcbbackground.caption
 msgid "Background"
-msgstr ""
+msgstr "Fondo"
 
 #: tfrmmain.bcbclose.caption
 msgctxt "tfrmmain.bcbclose.caption"
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: tfrmmain.bcbcolors.caption
 msgctxt "tfrmmain.bcbcolors.caption"
 msgid "Colors"
-msgstr ""
+msgstr "Colores"
 
 #: tfrmmain.bcbopen.caption
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: tfrmmain.bcptop.caption
 msgctxt "tfrmmain.bcptop.caption"
 msgid "WinDS PRO"
-msgstr ""
+msgstr "WinDS PRO"
 
 #: tfrmmain.caption
-#, fuzzy
 msgctxt "tfrmmain.caption"
 msgid "WinDS PRO"
 msgstr "WinDS PRO"
@@ -79,4 +78,3 @@ msgstr "WinDS PRO"
 #: umain.search
 msgid "SEARCH"
 msgstr "BUSCAR"
-
