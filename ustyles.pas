@@ -17,7 +17,6 @@ const
   ACCENT_COLOR: TBGRAPixel = (blue: 214; green: 102; red: 3; alpha: 255);
   BACKGROUND_COLOR: TBGRAPixel = (blue: 46; green: 41; red: 36; alpha: 255);
   BACKGROUND_DARK_COLOR: TBGRAPixel = (blue: 37; green: 33; red: 29; alpha: 255);
-  BACKGROUND_LIGHT_COLOR: TBGRAPixel = (blue: 61; green: 54; red: 47; alpha: 255);
   BORDER_COLOR: TBGRAPixel = (blue: 20; green: 20; red: 20; alpha: 255);
   TEXT_COLOR: TBGRAPixel = (blue: 250; green: 248; red: 246; alpha: 255);
 
@@ -75,7 +74,7 @@ begin
           StateNormal.Background.Color := BACKGROUND_DARK_COLOR;
           StateNormal.FontEx.Color := TEXT_COLOR;
           StateHover.Assign(StateNormal);
-          StateHover.Background.Color := BACKGROUND_LIGHT_COLOR;
+          StateHover.Background.Color := BACKGROUND_COLOR;
           StateClicked.Assign(StateNormal);
           StateClicked.Background.Color := BACKGROUND_COLOR;
         end;

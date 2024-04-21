@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
   ustyles, BCPanel, BCMaterialEdit, BGRAVirtualScreen, BGRABitmap, BCTypes,
   BCListBox, BCButton, BGRABitmapTypes, LCLType, JSONPropStorage, FileUtil,
-  uprograms,
+  uprograms, uconfigstyles,
   {$ifdef DEBUG}
   LazLoggerBase
   {$else}
@@ -20,6 +20,7 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    bcbColors: TBCButton;
     bcbOpen: TBCButton;
     bcbClose: TBCButton;
     bcbBackground: TBCButton;
@@ -37,6 +38,7 @@ type
     lbPrograms: TListBox;
     procedure bcbBackgroundClick(Sender: TObject);
     procedure bcbCloseClick(Sender: TObject);
+    procedure bcbColorsClick(Sender: TObject);
     procedure bcbOpenClick(Sender: TObject);
     procedure bcmeSearchChange(Sender: TObject);
     procedure bcmeSearchFilesChange(Sender: TObject);
@@ -383,6 +385,11 @@ begin
   bcpFile.Caption := '';
   bcpFile.Visible := False;
   SearchAndFill(bcmeSearch.Edit.Text);
+end;
+
+procedure TfrmMain.bcbColorsClick(Sender: TObject);
+begin
+  uconfigstyles.frmConfigStyles.ShowModal;
 end;
 
 procedure TfrmMain.bcbBackgroundClick(Sender: TObject);

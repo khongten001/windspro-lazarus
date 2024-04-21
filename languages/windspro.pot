@@ -1,6 +1,11 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: tfrmconfigstyles.caption
+msgctxt "tfrmconfigstyles.caption"
+msgid "Colors"
+msgstr ""
+
 #: tfrmmain.bcbbackground.caption
 msgid "Background"
 msgstr ""
@@ -8,6 +13,11 @@ msgstr ""
 #: tfrmmain.bcbclose.caption
 msgctxt "tfrmmain.bcbclose.caption"
 msgid "X"
+msgstr ""
+
+#: tfrmmain.bcbcolors.caption
+msgctxt "tfrmmain.bcbcolors.caption"
+msgid "Colors"
 msgstr ""
 
 #: tfrmmain.bcbopen.caption

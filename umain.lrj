@@ -2,5 +2,6 @@
 {"hash":43322223,"name":"tfrmmain.caption","sourcebytes":[87,105,110,68,83,32,80,82,79],"value":"WinDS PRO"},
 {"hash":353982,"name":"tfrmmain.bcbopen.caption","sourcebytes":[79,112,101,110],"value":"Open"},
 {"hash":32370148,"name":"tfrmmain.bcbbackground.caption","sourcebytes":[66,97,99,107,103,114,111,117,110,100],"value":"Background"},
+{"hash":78001811,"name":"tfrmmain.bcbcolors.caption","sourcebytes":[67,111,108,111,114,115],"value":"Colors"},
 {"hash":88,"name":"tfrmmain.bcbclose.caption","sourcebytes":[88],"value":"X"}
 ]}
