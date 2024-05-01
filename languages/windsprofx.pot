@@ -2,7 +2,6 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: tfrmconfigstyles.bcbdefaultdark.caption
-msgctxt "tfrmconfigstyles.bcbdefaultdark.caption"
 msgid "Dark Theme"
 msgstr ""
 
@@ -25,22 +24,18 @@ msgid "Accent"
 msgstr ""
 
 #: tfrmconfigstyles.lblbackground1.caption
-msgctxt "tfrmconfigstyles.lblbackground1.caption"
 msgid "Background 1"
 msgstr ""
 
 #: tfrmconfigstyles.lblbackground2.caption
-msgctxt "tfrmconfigstyles.lblbackground2.caption"
 msgid "Background 2"
 msgstr ""
 
 #: tfrmconfigstyles.lblborder1.caption
-msgctxt "tfrmconfigstyles.lblborder1.caption"
 msgid "Border 1"
 msgstr ""
 
 #: tfrmconfigstyles.lblborder2.caption
-msgctxt "tfrmconfigstyles.lblborder2.caption"
 msgid "Border 2"
 msgstr ""
 
@@ -57,7 +52,6 @@ msgid "Background"
 msgstr ""
 
 #: tfrmmain.bcbclose.caption
-msgctxt "tfrmmain.bcbclose.caption"
 msgid "X"
 msgstr ""
 
