@@ -192,7 +192,7 @@ procedure TfrmMain.FillFiles();
 begin
   files.Clear;
   if bcpFiles.Caption <> '' then
-    FindAllFiles(files, bcpFiles.Caption, '*.*', False);
+    FindAllFiles(files, bcpFiles.Caption, '*.*', True);
 end;
 
 procedure TfrmMain.SearchAndFillFiles(aSearch: string; aSelectDefault: boolean);
